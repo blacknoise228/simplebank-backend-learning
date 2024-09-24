@@ -1,5 +1,5 @@
 # After writing a telegram bot, I started to complete tasks from the udemy course 
-[Backend Master Class [Golang + Postgres + Kubernetes + gRPC]] (https://www.udemy.com/share/105PNI3@vgqgMszJTBS_PimvIiwd2I1n0p9H2f5nGWh1DrDvUUMWqXTTEnR6b9sAp31jfWQmkQ==/)
+Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://www.udemy.com/share/105PNI3@vgqgMszJTBS_PimvIiwd2I1n0p9H2f5nGWh1DrDvUUMWqXTTEnR6b9sAp31jfWQmkQ==/)
 
 ## Working with database [Postgres + SQLC]
  
