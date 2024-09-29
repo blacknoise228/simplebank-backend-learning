@@ -13,6 +13,7 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
     - Practice Test 1: Write SQL queries for transfers and entries table and generate Go code
 
 7. [x] **Write unit tests for database CRUD with random data in Golang**
+    - Write tests for the CRUD operations of Entry and Transfer tables
     - Practice Test 2: Configure the right sql_package in your sqlc.yaml file
 
 8. [ ] **A clean way to implement database transaction in Golang**
