@@ -7,11 +7,9 @@ package db
 
 import (
 	"context"
-
-	"github.com/jackc/pgx/v5/pgtype"
 )
 
-const createTransfer = `-- name: CreateTransfer :exec
+const createTransfer = `-- name: CreateTransfer :one
 INSERT INTO transfers (
     from_account_id,
     to_account_id,
@@ -22,14 +20,22 @@ INSERT INTO transfers (
 `
 
 type CreateTransferParams struct {
-	FromAccountID pgtype.Int8 `json:"from_account_id"`
-	ToAccountID   pgtype.Int8 `json:"to_account_id"`
-	Amount        int64       `json:"amount"`
+	FromAccountID int64 `json:"from_account_id"`
+	ToAccountID   int64 `json:"to_account_id"`
+	Amount        int64 `json:"amount"`
 }
 
-func (q *Queries) CreateTransfer(ctx context.Context, arg CreateTransferParams) error {
-	_, err := q.db.Exec(ctx, createTransfer, arg.FromAccountID, arg.ToAccountID, arg.Amount)
-	return err
+func (q *Queries) CreateTransfer(ctx context.Context, arg CreateTransferParams) (Transfer, error) {
+	row := q.db.QueryRowContext(ctx, createTransfer, arg.FromAccountID, arg.ToAccountID, arg.Amount)
+	var i Transfer
+	err := row.Scan(
+		&i.ID,
+		&i.FromAccountID,
+		&i.ToAccountID,
+		&i.Amount,
+		&i.CreatedAt,
+	)
+	return i, err
 }
 
 const getTransfer = `-- name: GetTransfer :one
@@ -41,7 +47,7 @@ type GetTransferRow struct {
 }
 
 func (q *Queries) GetTransfer(ctx context.Context, id int64) (GetTransferRow, error) {
-	row := q.db.QueryRow(ctx, getTransfer, id)
+	row := q.db.QueryRowContext(ctx, getTransfer, id)
 	var i GetTransferRow
 	err := row.Scan()
 	return i, err
@@ -60,7 +66,7 @@ type ListTransfersParams struct {
 }
 
 func (q *Queries) ListTransfers(ctx context.Context, arg ListTransfersParams) ([]Transfer, error) {
-	rows, err := q.db.Query(ctx, listTransfers, arg.Limit, arg.Offset)
+	rows, err := q.db.QueryContext(ctx, listTransfers, arg.Limit, arg.Offset)
 	if err != nil {
 		return nil, err
 	}
@@ -78,6 +84,9 @@ func (q *Queries) ListTransfers(ctx context.Context, arg ListTransfersParams) ([
 			return nil, err
 		}
 		items = append(items, i)
+	}
+	if err := rows.Close(); err != nil {
+		return nil, err
 	}
 	if err := rows.Err(); err != nil {
 		return nil, err

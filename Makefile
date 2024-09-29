@@ -19,4 +19,7 @@ goosedown:
 sqlc:
 	sqlc generate
 
-.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc
+test:
+	go test -v -cover ./...
+
+.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc test
