@@ -20,7 +20,7 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 9. [x] **DB transaction lock & How to handle deadlock in Golang**
 
-10. [ ] **How to avoid deadlock in DB transaction? Queries order matters!**
+10. [x] **How to avoid deadlock in DB transaction? Queries order matters!**
 
 11. [ ] **Deeply understand transaction isolation levels & read phenomena**
 
