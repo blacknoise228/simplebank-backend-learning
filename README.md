@@ -16,9 +16,9 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
     - Write tests for the CRUD operations of Entry and Transfer tables
     - Practice Test 2: Configure the right sql_package in your sqlc.yaml file
 
-8. [ ] **A clean way to implement database transaction in Golang**
+8. [x] **A clean way to implement database transaction in Golang**
 
-9. [ ] **DB transaction lock & How to handle deadlock in Golang**
+9. [x] **DB transaction lock & How to handle deadlock in Golang**
 
 10. [ ] **How to avoid deadlock in DB transaction? Queries order matters!**
 
