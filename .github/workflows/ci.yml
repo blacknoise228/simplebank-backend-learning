@@ -12,6 +12,7 @@ jobs:
     env: 
       GOOSE_DRIVER: postgres
       GOOSE_DBSTRING: ${ DB_STRING }
+      
     services:
       postgres:
         image: postgres:latest
