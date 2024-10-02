@@ -11,14 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       GOOSE_DRIVER: postgres
-      GOOSE_DBSTRING: ${ DB_STRING }
-      
+      GOOSE_DBSTRING: ${ secrets.DB_STRING }
+
     services:
       postgres:
         image: postgres:latest
         env:
           POSTGRES_USER: root
-          POSTGRES_PASSWORD: ${ POSTGRES_PASSWORD }
+          POSTGRES_PASSWORD: ${ secrets.POSTGRES_PASSWORD }
           POSTGRES_DB: simple_bank
         options: >-
           --health-cmd pg_isready
