@@ -25,3 +25,29 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 11. [x] **Deeply understand transaction isolation levels & read phenomena**
 
 12. [x] **Setup Github Actions for Golang + Postgres to run automated tests**
+
+## Section 2: Building RESTful HTTP JSON API [Gin + JWT + PASETO]
+
+1. [x] **Implement RESTful HTTP API in Go using Gin**
+
+2. [ ] **Load config from file & environment variables in Go with Viper**
+
+3. [ ] **Mock DB for testing HTTP API in Go and achieve 100% coverage**
+
+4. [ ] **Implement transfer money API with a custom params validator**
+
+5. [ ] **Add users table with unique & foreign key constraints in PostgreSQL**
+
+6. [ ] **How to handle DB errors in Golang correctly**
+
+7. [ ] **How to securely store passwords? Hash password in Go with Bcrypt!**
+
+8. [ ] **How to write stronger unit tests with a custom gomock matcher**
+
+9. [ ] **Why PASETO is better than JWT for token-based authentication?**
+
+10. [ ] **How to create and verify JWT & PASETO token in Golang**
+
+11. [ ] **Implement login user API that returns PASETO or JWT access token in Go**
+
+12. [ ] **Implement authentication middleware and authorization rules in Golang using Gin**

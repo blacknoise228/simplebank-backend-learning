@@ -11,7 +11,7 @@ import (
 
 const (
 	dbDriver = "postgres"
-	dbSource = "host=localhost port=5432 dbname=simple_bank user=root password=dialogitetatet connect_timeout=10 sslmode=disable"
+	dbSource = "host=localhost port=5432 dbname=simple_bank user=root password=password connect_timeout=10 sslmode=disable"
 )
 
 var testQueries *Queries
@@ -23,6 +23,7 @@ func TestMain(m *testing.M) {
 	if err != nil {
 		log.Fatal("DB not connected", err)
 	}
+
 	testQueries = New(testDB)
 
 	os.Exit(m.Run())
