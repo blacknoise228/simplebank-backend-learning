@@ -2,7 +2,7 @@ postgresrm:
 	docker stop postgres2
 	docker rm postgres2
 postgres:
-	docker run --name postgres2 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=password -d postgres:latest
+	docker run --name postgres2 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=${DEFAULT_PASSWORD} -d postgres:latest
 
 createdb: 
 	docker exec -it postgres2 createdb --username=root --owner=root simple_bank
@@ -19,4 +19,7 @@ goosedown:
 sqlc:
 	sqlc generate
 
-.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc
+test:
+	go test -v -cover ./...
+
+.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc test

@@ -1,5 +1,5 @@
-# After writing a telegram bot, I started to complete tasks from the udemy course 
-[Backend Master Class [Golang + Postgres + Kubernetes + gRPC]] (https://www.udemy.com/share/105PNI3@vgqgMszJTBS_PimvIiwd2I1n0p9H2f5nGWh1DrDvUUMWqXTTEnR6b9sAp31jfWQmkQ==/)
+# After writing a telegram bot, I started taking the Udemy course
+Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://www.udemy.com/share/105PNI3@vgqgMszJTBS_PimvIiwd2I1n0p9H2f5nGWh1DrDvUUMWqXTTEnR6b9sAp31jfWQmkQ==/)
 
 ## Working with database [Postgres + SQLC]
  
@@ -12,15 +12,16 @@
 6. [x] **Generate CRUD Golang code from SQL | Compare db/sql, gorm, sqlx & sqlc**
     - Practice Test 1: Write SQL queries for transfers and entries table and generate Go code
 
-7. [ ] **Write unit tests for database CRUD with random data in Golang**
+7. [x] **Write unit tests for database CRUD with random data in Golang**
+    - Write tests for the CRUD operations of Entry and Transfer tables
     - Practice Test 2: Configure the right sql_package in your sqlc.yaml file
 
-8. [ ] **A clean way to implement database transaction in Golang**
+8. [x] **A clean way to implement database transaction in Golang**
 
-9. [ ] **DB transaction lock & How to handle deadlock in Golang**
+9. [x] **DB transaction lock & How to handle deadlock in Golang**
 
-10. [ ] **How to avoid deadlock in DB transaction? Queries order matters!**
+10. [x] **How to avoid deadlock in DB transaction? Queries order matters!**
 
-11. [ ] **Deeply understand transaction isolation levels & read phenomena**
+11. [x] **Deeply understand transaction isolation levels & read phenomena**
 
-12. [ ] **Setup Github Actions for Golang + Postgres to run automated tests**
+12. [x] **Setup Github Actions for Golang + Postgres to run automated tests**
