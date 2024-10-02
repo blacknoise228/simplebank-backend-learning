@@ -9,7 +9,9 @@ jobs:
   tests:
     name: Test
     runs-on: ubuntu-latest
-
+    env: 
+      GOOSE_DRIVER: postgres
+      GOOSE_DBSTRING: ${ DB_STRING }
     services:
       postgres:
         image: postgres:latest
