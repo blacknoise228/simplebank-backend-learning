@@ -38,7 +38,7 @@ jobs:
         go-version: '1.22.5'
 
     - name: install goose
-      run: sudo curl -L https://github.com/pressly/goose/releases/download/v3.22.1/goose_linux_x86_64 --output /usr/bin/goose
+      run: curl -L https://github.com/pressly/goose/releases/download/v3.22.1/goose_linux_x86_64 --output /usr/bin/goose
 
     - name: run migrations
       run: make gooseup
