@@ -33,7 +33,11 @@ jobs:
       with:
         go-version: '1.22.5'
 
+    - name: set up goose
+      run: go install github.com/pressly/goose/v3/cmd/goose@latest
+      
     - name: run migrations
       run: make gooseup
+
     - name: Test
       run: make test
