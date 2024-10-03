@@ -25,4 +25,7 @@ test:
 server:
 	go run main.go
 
-.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc test server
+mock:
+	mockgen -package mockdb -destination db/mock/store.go github.com/blacknoise228/simplebank-backend-learning/db/sqlc Store
+
+.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc test server mock

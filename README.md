@@ -30,11 +30,11 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 1. [x] **Implement RESTful HTTP API in Go using Gin**
 
-2. [ ] **Load config from file & environment variables in Go with Viper**
+2. [x] **Load config from file & environment variables in Go with Viper**
 
-3. [ ] **Mock DB for testing HTTP API in Go and achieve 100% coverage**
+3. [x] **Mock DB for testing HTTP API in Go and achieve 100% coverage**
 
-4. [ ] **Implement transfer money API with a custom params validator**
+4. [x] **Implement transfer money API with a custom params validator**
 
 5. [ ] **Add users table with unique & foreign key constraints in PostgreSQL**
 
