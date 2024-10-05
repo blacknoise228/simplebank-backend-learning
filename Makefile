@@ -13,8 +13,14 @@ dropdb:
 gooseup:
 	goose up -dir db/migration
 
+gooseup1:
+	goose up-to 00001 -dir db/migration
+
 goosedown:
 	goose down -dir db/migration
+
+goosedown1:
+	goose down-to 00001 -dir db/migration
 
 sqlc:
 	sqlc generate
@@ -28,4 +34,4 @@ server:
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/blacknoise228/simplebank-backend-learning/db/sqlc Store
 
-.PHONY: postgres postgresrm createdb dropdb gooseup goosedown sqlc test server mock
+.PHONY: postgres postgresrm createdb dropdb gooseup gooseup1 goosedown goosedown1 sqlc test server mock
