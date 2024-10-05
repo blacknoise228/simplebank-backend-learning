@@ -36,9 +36,9 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 4. [x] **Implement transfer money API with a custom params validator**
 
-5. [ ] **Add users table with unique & foreign key constraints in PostgreSQL**
+5. [x] **Add users table with unique & foreign key constraints in PostgreSQL**
 
-6. [ ] **How to handle DB errors in Golang correctly**
+6. [x] **How to handle DB errors in Golang correctly**
 
 7. [ ] **How to securely store passwords? Hash password in Go with Bcrypt!**
 
