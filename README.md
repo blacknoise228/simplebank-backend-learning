@@ -40,11 +40,11 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 6. [x] **How to handle DB errors in Golang correctly**
 
-7. [ ] **How to securely store passwords? Hash password in Go with Bcrypt!**
+7. [x] **How to securely store passwords? Hash password in Go with Bcrypt!**
 
-8. [ ] **How to write stronger unit tests with a custom gomock matcher**
+8. [x] **How to write stronger unit tests with a custom gomock matcher**
 
-9. [ ] **Why PASETO is better than JWT for token-based authentication?**
+9. [x] **Why PASETO is better than JWT for token-based authentication?**
 
 10. [ ] **How to create and verify JWT & PASETO token in Golang**
 
