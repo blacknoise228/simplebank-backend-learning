@@ -20,7 +20,10 @@ func main() {
 		log.Fatal("DB not connected", err)
 	}
 	store := db.NewStore(conn)
-	server := api.NewServer(store)
+	server, err := api.NewServer(config, store)
+	if err != nil {
+		log.Fatal("server create error:", err)
+	}
 
 	if err = server.Start(config.ServerURL); err != nil {
 		log.Fatal("cannot start server:", err)
