@@ -46,8 +46,8 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 9. [x] **Why PASETO is better than JWT for token-based authentication?**
 
-10. [ ] **How to create and verify JWT & PASETO token in Golang**
+10. [x] **How to create and verify JWT & PASETO token in Golang**
 
-11. [ ] **Implement login user API that returns PASETO or JWT access token in Go**
+11. [x] **Implement login user API that returns PASETO or JWT access token in Go**
 
-12. [ ] **Implement authentication middleware and authorization rules in Golang using Gin**
+12. [x] **Implement authentication middleware and authorization rules in Golang using Gin**
