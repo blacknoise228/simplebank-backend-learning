@@ -51,3 +51,34 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 11. [x] **Implement login user API that returns PASETO or JWT access token in Go**
 
 12. [x] **Implement authentication middleware and authorization rules in Golang using Gin**
+
+## Section 3: Deploying the application to production [Kubernetes + AWS]
+
+1. [ ] **Build a minimal Golang Docker image with a multistage Dockerfile**
+
+2. [ ] **How to use docker network to connect 2 stand-alone containers**
+
+3. [ ] **How to write docker-compose file and control service start-up orders with wait-for.sh**
+
+4. [ ] **How to create a free tier AWS account**
+
+5. [ ] **Auto build & push docker image to AWS ECR with Github Actions**
+
+6. [ ] **How to create a production DB on AWS RDS**
+
+7. [ ] **Store & retrieve production secrets with AWS secrets manager**
+
+8. [ ] **Kubernetes architecture & How to create an EKS cluster on AWS**
+
+9. [ ] **How to use kubectl & k9s to connect to a kubernetes cluster on AWS EKS**
+
+10. [ ] **How to deploy a web app to Kubernetes cluster on AWS EKS**
+
+11. [ ] **Register a domain name & set up A-record using Route53**
+
+12. [ ] **How to use Ingress to route traffics to different services in Kubernetes**
+
+13. [ ] **Automatic issue TLS certificates in Kubernetes with Let's Encrypt**
+
+14. [ ] **Automatic deploy to Kubernetes with Github Action**
+
