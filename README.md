@@ -54,11 +54,11 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 ## Section 3: Deploying the application to production [Kubernetes + AWS]
 
-1. [ ] **Build a minimal Golang Docker image with a multistage Dockerfile**
+1. [x] **Build a minimal Golang Docker image with a multistage Dockerfile**
 
-2. [ ] **How to use docker network to connect 2 stand-alone containers**
+2. [x] **How to use docker network to connect 2 stand-alone containers**
 
-3. [ ] **How to write docker-compose file and control service start-up orders with wait-for.sh**
+3. [x] **How to write docker-compose file and control service start-up orders with wait-for.sh**
 
 4. [ ] **How to create a free tier AWS account**
 

@@ -1,0 +1,22 @@
+services:
+  postgres2:
+    image: postgres:17-alpine3.20
+    environment: 
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=simple_bank
+    ports: 
+      - "5432:5432"
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - GOOSE_DRIVER=${GOOSE_DRIVER}
+      - GOOSE_DBSTRING=host=postgres2 port=5432 dbname=simple_bank user=root password=password connect_timeout=10 sslmode=disable
+    depends_on: 
+      - postgres2
+    entrypoint: [ "/app/wait-for.sh", "postgres2:5432", "--", "/app/start.sh" ]
+    command: [ "/app/main" ]
