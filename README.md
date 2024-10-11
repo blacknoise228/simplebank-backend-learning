@@ -60,15 +60,15 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 3. [x] **How to write docker-compose file and control service start-up orders with wait-for.sh**
 
-4. [ ] **How to create a free tier AWS account**
+4. [x] **How to create a free tier AWS account**
 
-5. [ ] **Auto build & push docker image to AWS ECR with Github Actions**
+5. [x] **Auto build & push docker image to AWS ECR with Github Actions**
 
-6. [ ] **How to create a production DB on AWS RDS**
+6. [x] **How to create a production DB on AWS RDS**
 
-7. [ ] **Store & retrieve production secrets with AWS secrets manager**
+7. [x] **Store & retrieve production secrets with AWS secrets manager**
 
-8. [ ] **Kubernetes architecture & How to create an EKS cluster on AWS**
+8. [x] **Kubernetes architecture & How to create an EKS cluster on AWS**
 
 9. [ ] **How to use kubectl & k9s to connect to a kubernetes cluster on AWS EKS**
 
