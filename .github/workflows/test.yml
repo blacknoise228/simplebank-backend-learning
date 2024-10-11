@@ -13,14 +13,14 @@ jobs:
     runs-on: ubuntu-latest
     env: 
       GOOSE_DRIVER: postgres
-      GOOSE_DBSTRING: host=localhost port=5432 dbname=simple_bank user=root password=password connect_timeout=10 sslmode=disable
+      GOOSE_DBSTRING: ${{ secrets.DB_STRING }}
 
     services:
       postgres:
         image: postgres:latest
         env:
           POSTGRES_USER: root
-          POSTGRES_PASSWORD: password
+          POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
           POSTGRES_DB: simple_bank
         ports: 
           - 5432:5432
