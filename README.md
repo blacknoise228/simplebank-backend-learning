@@ -70,13 +70,13 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 8. [x] **Kubernetes architecture & How to create an EKS cluster on AWS**
 
-9. [ ] **How to use kubectl & k9s to connect to a kubernetes cluster on AWS EKS**
+9. [x] **How to use kubectl & k9s to connect to a kubernetes cluster on AWS EKS**
 
-10. [ ] **How to deploy a web app to Kubernetes cluster on AWS EKS**
+10. [x] **How to deploy a web app to Kubernetes cluster on AWS EKS**
 
-11. [ ] **Register a domain name & set up A-record using Route53**
+11. [x] **Register a domain name & set up A-record using Route53**
 
-12. [ ] **How to use Ingress to route traffics to different services in Kubernetes**
+12. [x] **How to use Ingress to route traffics to different services in Kubernetes**
 
 13. [ ] **Automatic issue TLS certificates in Kubernetes with Let's Encrypt**
 
