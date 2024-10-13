@@ -82,3 +82,38 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 14. [x] **Automatic deploy to Kubernetes with Github Action**
 
+## Section 4: Advanced Backend Topics [Sessions + gRPC]
+
+1. [ ] **How to manage user session with refresh token - Golang**
+
+2. [ ] **Generate DB documentation page and schema SQL dump from DBML**
+
+3. [ ] **Introduction to gRPC**
+
+4. [ ] **Define gRPC API and generate Go code with protobuf**
+
+5. [ ] **How to run a golang gRPC server and call its API**
+
+6. [ ] **Implement gRPC API to create and login users in Go**
+
+7. [ ] **gRPC gateway: write code once, serve both gRPC & HTTP requests**
+
+8. [ ] **How to extract info from gRPC metadata**
+
+9. [ ] **Automatic generate & serve Swagger docs from Go server**
+
+10. [ ] **Embed static frontend files inside Golang backend server's binary**
+
+11. [ ] **Validate gRPC parameters and send human/machine friendly response**
+
+12. [ ] **Run DB migrations directly inside Golang code**
+ 
+13. [ ] **Partial update DB record with SQLC nullable parameters**
+
+14. [ ] **Build gRPC update API with optional parameters**
+ 
+15. [ ] **Add authorization to protect gRPC API**
+ 
+16. [ ] **Write structured logs for gRPC APIs**
+ 
+17. [ ] **How to write HTTP logger middleware in Go**
