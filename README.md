@@ -78,7 +78,7 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 12. [x] **How to use Ingress to route traffics to different services in Kubernetes**
 
-13. [ ] **Automatic issue TLS certificates in Kubernetes with Let's Encrypt**
+13. [x] **Automatic issue TLS certificates in Kubernetes with Let's Encrypt**
 
-14. [ ] **Automatic deploy to Kubernetes with Github Action**
+14. [x] **Automatic deploy to Kubernetes with Github Action**
 
