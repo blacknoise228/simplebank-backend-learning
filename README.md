@@ -86,7 +86,7 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 1. [x] **How to manage user session with refresh token - Golang**
 
-2. [ ] **Generate DB documentation page and schema SQL dump from DBML**
+2. [x] **Generate DB documentation page and schema SQL dump from DBML**
 
 3. [ ] **Introduction to gRPC**
 
