@@ -84,9 +84,9 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 ## Section 4: Advanced Backend Topics [Sessions + gRPC]
 
-1. [ ] **How to manage user session with refresh token - Golang**
+1. [x] **How to manage user session with refresh token - Golang**
 
-2. [ ] **Generate DB documentation page and schema SQL dump from DBML**
+2. [x] **Generate DB documentation page and schema SQL dump from DBML**
 
 3. [ ] **Introduction to gRPC**
 
@@ -117,3 +117,49 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 16. [ ] **Write structured logs for gRPC APIs**
  
 17. [ ] **How to write HTTP logger middleware in Go**
+
+## Section 5: Asynchronous processing with background workers [Asynq + Redis]
+
+1. [ ] **Implement background worker in Go with Redis and Asynq**
+
+2. [ ] **Integrate async worker to Go web server**
+
+3. [ ] **Send async tasks to Redis within a DB transaction**
+
+4. [ ] **How to handle errors and print logs for Go Asynq workers**
+
+5. [ ] **A bit of delay might be good for your async tasks**
+
+6. [ ] **How to send emails in Go via Gmail**
+
+7. [ ] **How to skip test in Go and config test flag in vscode**
+
+8. [ ] **Email verification in Go: design DB and send email**
+
+9. [ ] **Implement email verification API in Go**
+
+10. [ ] **Unit test gRPC API with mock DB & Redis**
+
+11. [ ] **How to test a gRPC API that requires authentication**
+
+## Section 6: Improve the stability and security of the server
+
+1. [ ] **Config sqlc version 2 for Go and Postgres**
+
+2. [ ] **Switch DB driver from lib/pq to pgx**
+
+3. [ ] **How to handle DB errors with PGX driver**
+
+4. [ ] **Docker compose: port + volume mapping**
+
+5. [ ] **How to install & use binary packages in Go**
+
+6. [ ] **Implement role-based access control (RBAC) in Go**
+
+7. [ ] **Grant AWS EKS cluster access to Postgres and Redis using security group**
+
+8. [ ] **Deploy gRPC + HTTP server to AWS EKS cluster**
+
+9. [ ] **Don't lose money on AWS**
+
+10. [ ] **Go 1.22 fixed the most common for-loop trap**

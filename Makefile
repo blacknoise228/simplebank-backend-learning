@@ -22,6 +22,12 @@ goosedown:
 goosedown1:
 	goose down-to 00001 -dir db/migration
 
+dbdock: 
+	dbdocs build doc/db.dbml
+
+dbschema: 
+	dbml2sql --postgres -o doc/schema.sql doc/db.dbml
+
 sqlc:
 	sqlc generate
 
@@ -34,4 +40,4 @@ server:
 mock:
 	mockgen -package mockdb -destination db/mock/store.go github.com/blacknoise228/simplebank-backend-learning/db/sqlc Store
 
-.PHONY: postgres postgresrm createdb dropdb gooseup gooseup1 goosedown goosedown1 sqlc test server mock
+.PHONY: postgres postgresrm createdb dropdb gooseup gooseup1 goosedown goosedown1 dbdock dbschema sqlc test server mock
