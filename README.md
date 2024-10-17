@@ -88,15 +88,15 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 2. [x] **Generate DB documentation page and schema SQL dump from DBML**
 
-3. [ ] **Introduction to gRPC**
+3. [x] **Introduction to gRPC**
 
-4. [ ] **Define gRPC API and generate Go code with protobuf**
+4. [x] **Define gRPC API and generate Go code with protobuf**
 
-5. [ ] **How to run a golang gRPC server and call its API**
+5. [x] **How to run a golang gRPC server and call its API**
 
-6. [ ] **Implement gRPC API to create and login users in Go**
+6. [x] **Implement gRPC API to create and login users in Go**
 
-7. [ ] **gRPC gateway: write code once, serve both gRPC & HTTP requests**
+7. [x] **gRPC gateway: write code once, serve both gRPC & HTTP requests**
 
 8. [ ] **How to extract info from gRPC metadata**
 

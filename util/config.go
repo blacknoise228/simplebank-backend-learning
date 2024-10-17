@@ -11,7 +11,8 @@ import (
 type Config struct {
 	DBDriver             string        `mapstructure:"GOOSE_DRIVER"`
 	DBSource             string        `mapstructure:"GOOSE_DBSTRING"`
-	ServerURL            string        `mapstructure:"SERVER_URL"`
+	HTTPServerURL        string        `mapstructure:"HTTP_SERVER_URL"`
+	GRPCServerURL        string        `mapstructure:"GRPC_SERVER_URL"`
 	TokenSymmetricKey    string        `mapstructure:"TOKEN_SYMMETRIC_KEY"`
 	AccessTokenDuration  time.Duration `mapstructure:"ACCESS_TOKEN_DURATION"`
 	RefreshTokenDuration time.Duration `mapstructure:"REFRESH_TOKEN_DURATION"`
