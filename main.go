@@ -9,7 +9,6 @@ import (
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 
-	"github.com/blacknoise228/simplebank-backend-learning/api"
 	db "github.com/blacknoise228/simplebank-backend-learning/db/sqlc"
 	"github.com/blacknoise228/simplebank-backend-learning/gapi"
 	"github.com/blacknoise228/simplebank-backend-learning/pb"
@@ -33,17 +32,6 @@ func main() {
 	go runGateWayServer(config, store)
 	runGRPCServer(config, store)
 
-}
-
-func runGinServer(config util.Config, store db.Store) {
-	server, err := api.NewServer(config, store)
-	if err != nil {
-		log.Fatal("server create error:", err)
-	}
-
-	if err = server.Start(config.HTTPServerURL); err != nil {
-		log.Fatal("cannot start server:", err)
-	}
 }
 
 func runGRPCServer(config util.Config, store db.Store) {
@@ -90,6 +78,9 @@ func runGateWayServer(config util.Config, store db.Store) {
 	}
 	mux := http.NewServeMux()
 	mux.Handle("/", grpcMux)
+
+	fs := http.FileServer(http.Dir("./doc/swagger"))
+	mux.Handle("/swagger/", http.StripPrefix("/swagger", fs))
 
 	listener, err := net.Listen("tcp", config.HTTPServerURL)
 	if err != nil {
