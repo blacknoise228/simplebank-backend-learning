@@ -98,7 +98,7 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 7. [x] **gRPC gateway: write code once, serve both gRPC & HTTP requests**
 
-8. [ ] **How to extract info from gRPC metadata**
+8. [x] **How to extract info from gRPC metadata**
 
 9. [ ] **Automatic generate & serve Swagger docs from Go server**
 
