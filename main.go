@@ -3,12 +3,14 @@ package main
 import (
 	"context"
 	"database/sql"
+	"embed"
 	"log"
 	"net"
 	"net/http"
 
 	_ "github.com/blacknoise228/simplebank-backend-learning/doc/statik"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/pressly/goose/v3"
 	"github.com/rakyll/statik/fs"
 
 	db "github.com/blacknoise228/simplebank-backend-learning/db/sqlc"
@@ -21,6 +23,9 @@ import (
 	"google.golang.org/protobuf/encoding/protojson"
 )
 
+//go:embed db/migration/*.sql
+var embedMigrations embed.FS
+
 func main() {
 	config, err := util.LoadConfig(".")
 	if err != nil {
@@ -30,10 +35,21 @@ func main() {
 	if err != nil {
 		log.Fatal("DB not connected", err)
 	}
+	runDBMigrate(conn)
 	store := db.NewStore(conn)
 	go runGateWayServer(config, store)
 	runGRPCServer(config, store)
 
+}
+func runDBMigrate(db *sql.DB) {
+	goose.SetBaseFS(embedMigrations)
+	if err := goose.SetDialect("postgres"); err != nil {
+		log.Fatal("Migration: failed set dialect: ", err)
+	}
+	err := goose.Up(db, "db/migration")
+	if err != nil {
+		log.Fatal("Migration: failed: ", err)
+	}
 }
 
 func runGRPCServer(config util.Config, store db.Store) {
