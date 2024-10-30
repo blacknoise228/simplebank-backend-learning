@@ -7,7 +7,9 @@ import (
 	"net"
 	"net/http"
 
+	_ "github.com/blacknoise228/simplebank-backend-learning/doc/statik"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+	"github.com/rakyll/statik/fs"
 
 	db "github.com/blacknoise228/simplebank-backend-learning/db/sqlc"
 	"github.com/blacknoise228/simplebank-backend-learning/gapi"
@@ -79,8 +81,12 @@ func runGateWayServer(config util.Config, store db.Store) {
 	mux := http.NewServeMux()
 	mux.Handle("/", grpcMux)
 
-	fs := http.FileServer(http.Dir("./doc/swagger"))
-	mux.Handle("/swagger/", http.StripPrefix("/swagger", fs))
+	statikFS, err := fs.New()
+	if err != nil {
+		log.Fatal("cannot create statik fs:", err)
+	}
+	swaggerHandler := http.StripPrefix("/swagger/", http.FileServer(statikFS))
+	mux.Handle("/swagger/", swaggerHandler)
 
 	listener, err := net.Listen("tcp", config.HTTPServerURL)
 	if err != nil {
