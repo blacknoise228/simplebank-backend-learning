@@ -100,19 +100,19 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
 
 8. [x] **How to extract info from gRPC metadata**
 
-9. [ ] **Automatic generate & serve Swagger docs from Go server**
+9. [x] **Automatic generate & serve Swagger docs from Go server**
 
-10. [ ] **Embed static frontend files inside Golang backend server's binary**
+10. [x] **Embed static frontend files inside Golang backend server's binary**
 
-11. [ ] **Validate gRPC parameters and send human/machine friendly response**
+11. [x] **Validate gRPC parameters and send human/machine friendly response**
 
-12. [ ] **Run DB migrations directly inside Golang code**
+12. [x] **Run DB migrations directly inside Golang code**
  
-13. [ ] **Partial update DB record with SQLC nullable parameters**
+13. [x] **Partial update DB record with SQLC nullable parameters**
 
-14. [ ] **Build gRPC update API with optional parameters**
+14. [x] **Build gRPC update API with optional parameters**
  
-15. [ ] **Add authorization to protect gRPC API**
+15. [x] **Add authorization to protect gRPC API**
  
 16. [ ] **Write structured logs for gRPC APIs**
  
