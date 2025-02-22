@@ -4,9 +4,12 @@ import (
 	"context"
 	"database/sql"
 	"embed"
-	"log"
 	"net"
 	"net/http"
+	"os"
+
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 
 	_ "github.com/blacknoise228/simplebank-backend-learning/doc/statik"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
@@ -29,52 +32,64 @@ var embedMigrations embed.FS
 func main() {
 	config, err := util.LoadConfig(".")
 	if err != nil {
-		log.Fatal("cannot load config", err)
+		log.Fatal().Err(err).Msg("cannot load config")
 	}
+
+	if config.Environment == "dev" {
+		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+	}
+
 	conn, err := sql.Open(config.DBDriver, config.DBSource)
 	if err != nil {
-		log.Fatal("DB not connected", err)
+		log.Fatal().Err(err).Msg("DB not connected")
 	}
+
 	runDBMigrate(conn)
+
 	store := db.NewStore(conn)
+
 	go runGateWayServer(config, store)
+
 	runGRPCServer(config, store)
 
 }
 func runDBMigrate(db *sql.DB) {
 	goose.SetBaseFS(embedMigrations)
 	if err := goose.SetDialect("postgres"); err != nil {
-		log.Fatal("Migration: failed set dialect: ", err)
+		log.Fatal().Err(err).Msg("Migration: failed set dialect")
 	}
 	err := goose.Up(db, "db/migration")
 	if err != nil {
-		log.Fatal("Migration: failed: ", err)
+		log.Fatal().Err(err).Msg("Migration: failed")
 	}
+	log.Info().Msg("Migration: success")
 }
 
 func runGRPCServer(config util.Config, store db.Store) {
 	server, err := gapi.NewServer(config, store)
 	if err != nil {
-		log.Fatal("server create error:", err)
+		log.Fatal().Err(err).Msg("server create error")
 	}
-	grpcServer := grpc.NewServer()
+
+	grpcLogger := grpc.UnaryInterceptor(gapi.GrpcLogger)
+	grpcServer := grpc.NewServer(grpcLogger)
 	pb.RegisterSimpleBankServer(grpcServer, server)
 	reflection.Register(grpcServer)
 
 	listener, err := net.Listen("tcp", config.GRPCServerURL)
 	if err != nil {
-		log.Fatal("cannot create listener:", err)
+		log.Fatal().Err(err).Msg("cannot create listener")
 	}
 	log.Printf("start gRPC server on %s", listener.Addr().String())
 	err = grpcServer.Serve(listener)
 	if err != nil {
-		log.Fatal("cannot create gRPC server:", err)
+		log.Fatal().Err(err).Msg("cannot create gRPC server")
 	}
 }
 func runGateWayServer(config util.Config, store db.Store) {
 	server, err := gapi.NewServer(config, store)
 	if err != nil {
-		log.Fatal("http gatewayserver create error:", err)
+		log.Fatal().Err(err).Msg("http gatewayserver create error")
 	}
 	jsonOption := runtime.WithMarshalerOption(
 		runtime.MIMEWildcard,
@@ -92,25 +107,29 @@ func runGateWayServer(config util.Config, store db.Store) {
 	defer cancel()
 	err = pb.RegisterSimpleBankHandlerServer(ctx, grpcMux, server)
 	if err != nil {
-		log.Fatal("cannot create http gateway handler:", err)
+		log.Fatal().Err(err).Msg("cannot create http gateway handler")
 	}
 	mux := http.NewServeMux()
 	mux.Handle("/", grpcMux)
 
 	statikFS, err := fs.New()
 	if err != nil {
-		log.Fatal("cannot create statik fs:", err)
+		log.Fatal().Err(err).Msg("cannot create statik fs")
 	}
 	swaggerHandler := http.StripPrefix("/swagger/", http.FileServer(statikFS))
 	mux.Handle("/swagger/", swaggerHandler)
 
 	listener, err := net.Listen("tcp", config.HTTPServerURL)
 	if err != nil {
-		log.Fatal("cannot create http gateway listener:", err)
+		log.Fatal().Err(err).Msg("cannot create http gateway listener")
 	}
+
 	log.Printf("start HTTP gateway server on %s", listener.Addr().String())
-	err = http.Serve(listener, mux)
+
+	handler := gapi.HttpLogger(mux)
+
+	err = http.Serve(listener, handler)
 	if err != nil {
-		log.Fatal("cannot create http gateway server:", err)
+		log.Fatal().Err(err).Msg("cannot create http gateway server")
 	}
 }

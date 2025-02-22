@@ -114,9 +114,9 @@ Course: [Backend Master Class [Golang + Postgres + Kubernetes + gRPC]](https://w
  
 15. [x] **Add authorization to protect gRPC API**
  
-16. [ ] **Write structured logs for gRPC APIs**
+16. [x] **Write structured logs for gRPC APIs**
  
-17. [ ] **How to write HTTP logger middleware in Go**
+17. [x] **How to write HTTP logger middleware in Go**
 
 ## Section 5: Asynchronous processing with background workers [Asynq + Redis]
 
